@@ -13,32 +13,32 @@ file(
 )
 include(${CMAKE_CURRENT_BINARY_DIR}/cmake/CPM.cmake)
 
-CPMAddPackage("gh:libsdl-org/SDL#6cf84e2")
-CPMAddPackage("gh:libsdl-org/SDL_image#7744158")
-CPMAddPackage("gh:libsdl-org/SDL_ttf#f9b636f")
-CPMAddPackage("gh:libsdl-org/SDL_mixer#8ab0d03")
+CPMAddPackage("gh:libsdl-org/SDL#b5c3eab")
+CPMAddPackage("gh:libsdl-org/SDL_image#4a762bd")
+CPMAddPackage("gh:libsdl-org/SDL_ttf#2a89147")
+CPMAddPackage("gh:libsdl-org/SDL_mixer#171eb2d")
 
-CPMAddPackage("gh:google/googletest#v1.14.x")
+CPMAddPackage("gh:google/googletest#v1.16.x")
 
-CPMAddPackage("gh:KhronosGroup/Vulkan-Headers#vulkan-sdk-1.3.268.0")
-CPMAddPackage("gh:KhronosGroup/SPIRV-Headers#vulkan-sdk-1.3.268.0")
-CPMAddPackage("gh:KhronosGroup/SPIRV-Tools#vulkan-sdk-1.3.268.0")
-CPMAddPackage("gh:KhronosGroup/glslang#vulkan-sdk-1.3.268.0")
+CPMAddPackage("gh:KhronosGroup/Vulkan-Headers#vulkan-sdk-1.4.306.0")
+CPMAddPackage("gh:KhronosGroup/SPIRV-Headers#vulkan-sdk-1.4.304.0")
+CPMAddPackage("gh:KhronosGroup/SPIRV-Tools#vulkan-sdk-1.4.304.0")
+CPMAddPackage("gh:KhronosGroup/glslang#vulkan-sdk-1.4.304.0")
 
-CPMAddPackage("gh:zeux/volk#41c8f70")
+CPMAddPackage("gh:zeux/volk#0b17a76")
 
-CPMAddPackage("gh:GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator#dc8a3fb")
+CPMAddPackage("gh:GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator#c788c52")
 
-CPMAddPackage("gh:recp/cglm#d93b46b")
+CPMAddPackage("gh:recp/cglm#1796cc5")
 
-CPMAddPackage("gh:assimp/assimp#a7cfa32")
+CPMAddPackage("gh:assimp/assimp#c35200e")
 
-CPMAddPackage("gh:cimgui/cimgui#4ca6b29")
+CPMAddPackage("gh:ocornut/imgui#dbb5eea")
 
 CPMAddPackage(
         NAME enet
         GITHUB_REPOSITORY lsalzman/enet
-        GIT_TAG 2a85cd6
+        GIT_TAG 2662c0d
         DOWNLOAD_ONLY True
 )
 
