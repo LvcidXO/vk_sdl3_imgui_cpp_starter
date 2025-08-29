@@ -45,30 +45,6 @@ https://www.youtube.com/watch?v=WLjuV9_fQfw
 - X11 development libraries
 - Wayland development libraries (optional)
 
-## 🏁 Quick Start
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/LvcidXO/vk_sdl3_imgui_cpp_starter.git PROJECTNAME
-cd PROJECTNAME
-```
-- Name your project folder whatever you like (replace "PROJECTNAME")
-- On Windows you can navigate to the folder you want you project folder in and right-click > "Open in Terminal" as a shortcut to CMD in the right location.
-
-### 2. Build
-```bash
-mkdir build && cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release
-cmake --build .
-```
-
-### 3. Run
-```bash
-# Linux/macOS
-./bin/Release/vk_sdl3_imgui_cpp_starter
-
-# Windows
-.\bin\Release\vk_sdl3_imgui_cpp_starter.exe
 ```
 
 ## 📁 Project Structure
