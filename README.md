@@ -22,31 +22,6 @@ https://www.youtube.com/watch?v=WLjuV9_fQfw
 - **Testing Ready**: GoogleTest integration for unit testing
 - **Memory Management**: Vulkan Memory Allocator (VMA) for efficient GPU memory handling
 
-## 🛠️ Prerequisites
-
-### Required
-- **C++20 compatible compiler**
-  - GCC 10+ / Clang 10+ / MSVC 2019+
-- **CMake 3.26+**
-- **Vulkan SDK 1.3+**
-  - Download from [LunarG](https://vulkan.lunarg.com/)
-
-### Platform-Specific
-**Windows:**
-- Visual Studio 2019+ or Visual Studio Build Tools
-- Optional: vcpkg for dependency management
-
-**macOS:**
-- Xcode or Command Line Tools
-- MoltenVK (included with Vulkan SDK)
-
-**Linux:**
-- Essential build tools (`build-essential` on Ubuntu/Debian)
-- X11 development libraries
-- Wayland development libraries (optional)
-
-```
-
 ## 📁 Project Structure
 
 ```
