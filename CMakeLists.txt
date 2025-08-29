@@ -30,9 +30,19 @@ if(NOT EXISTS ${CMAKE_CURRENT_BINARY_DIR}/cmake/CPM.cmake)
 endif()
 include(${CMAKE_CURRENT_BINARY_DIR}/cmake/CPM.cmake)
 
-# Core Dependencies
+# SDL3 Platform
 CPMAddPackage("gh:libsdl-org/SDL#b5c3eab")
+
+# SDL based utils
 CPMAddPackage("gh:libsdl-org/SDL_image#4a762bd")
+CPMAddPackage("gh:libsdl-org/SDL_ttf#3d7b6ef")
+CPMAddPackage("gh:libsdl-org/SDL_mixer#ebdd9cc") 
+
+# 3D support
+CPMAddPackage("gh:assimp/assimp#c35200e")
+
+# Networking Support
+CPMAddPackage("gh:lsalzman/enet#2662c0d")
 
 # Vulkan Dependencies
 CPMAddPackage("gh:KhronosGroup/Vulkan-Headers#vulkan-sdk-1.4.304.0")
@@ -42,7 +52,7 @@ CPMAddPackage("gh:KhronosGroup/glslang#vulkan-sdk-1.4.304.0")
 CPMAddPackage("gh:zeux/volk#0b17a76")
 CPMAddPackage("gh:GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator#c788c52")
 
-# UI Framework - Native C++ ImGui (not cimgui)
+# UI Framework - Native C++ ImGui
 CPMAddPackage("gh:ocornut/imgui#docking")  # Use docking branch for multi-window support
 
 # Math Library
@@ -69,6 +79,30 @@ if(imgui_ADDED)
   target_link_libraries(imgui PUBLIC SDL3::SDL3 Vulkan::Headers)
 endif()
 
+# Custom enet setup (add after CPMAddPackage calls)
+if(enet_ADDED)
+  add_library(enet)
+  target_include_directories(enet PUBLIC "${enet_SOURCE_DIR}/include")
+  target_sources(
+    enet
+    PRIVATE ${enet_SOURCE_DIR}/callbacks.c
+            ${enet_SOURCE_DIR}/compress.c
+            ${enet_SOURCE_DIR}/host.c
+            ${enet_SOURCE_DIR}/list.c
+            ${enet_SOURCE_DIR}/packet.c
+            ${enet_SOURCE_DIR}/peer.c
+            ${enet_SOURCE_DIR}/protocol.c)
+
+  # Platform-specific sources
+  if(WIN32)
+    target_sources(enet PRIVATE ${enet_SOURCE_DIR}/win32.c)
+  else()
+    target_sources(enet PRIVATE ${enet_SOURCE_DIR}/unix.c)
+  endif()
+
+  target_compile_definitions(enet PRIVATE ENET_BUILDING_LIB)
+endif()
+
 # Main library target (for reusable components)
 add_library(${PROJECT_NAME}_lib INTERFACE)
 target_link_libraries(
@@ -85,6 +119,10 @@ target_link_libraries(
     cglm
     nlohmann_json::nlohmann_json
     spdlog::spdlog
+    SDL3_ttf::SDL3_ttf
+    SDL3_mixer::SDL3_mixer
+    assimp::assimp
+    enet
 )
 
 # Compiler warnings and optimizations
