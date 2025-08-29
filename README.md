@@ -27,6 +27,7 @@ https://www.youtube.com/watch?v=WLjuV9_fQfw
 - **Math Library**: cglm for graphics mathematics operations
 - **Font Rendering**: Both ImGui font system and SDL3_ttf for comprehensive text support
 
+
 ## 📁 Project Structure
 
 ```
@@ -41,6 +42,7 @@ https://www.youtube.com/watch?v=WLjuV9_fQfw
 ├── config.json              # Runtime configuration (auto-generated)
 └── README.md               # This file
 ```
+
 
 ## 🔧 Configuration
 
@@ -62,26 +64,43 @@ The application automatically creates a `config.json` file on first run:
 }
 ```
 
+
 ## 🎯 What's Included
 
 ### Core Framework
-- **Application Class**: Complete lifecycle management
-- **Vulkan Setup**: Instance, device, swapchain, render pass creation
-- **ImGui Integration**: Docking, viewports, multiple windows
-- **Event Handling**: Keyboard, mouse, window events
-- **Logging System**: Structured logging with configurable levels
+- **Application Class**: Complete lifecycle management with initialization, main loop, and cleanup
+- **Vulkan Setup**: Full pipeline including instance, device, swapchain, render pass, and framebuffer creation
+- **ImGui Integration**: Docking support, multi-viewport rendering, and SDL3 backend integration
+- **Event Handling**: Comprehensive keyboard, mouse, gamepad, and window event processing
+- **Configuration System**: JSON-based settings with automatic config file generation
+
+### Multimedia Support
+- **Graphics Pipeline**: Complete Vulkan rendering setup with swapchain management
+- **Image Loading**: SDL3_image support for PNG, JPG, BMP, and other common formats
+- **Font Rendering**: Dual font system with both ImGui fonts and SDL3_ttf for flexible text rendering
+- **Audio Mixing**: SDL3_mixer integration for sound effects, music, and multi-channel audio
+- **3D Model Loading**: Assimp support for 40+ 3D formats including FBX, OBJ, COLLADA, and glTF
 
 ### UI Features
-- **Dockable Interface**: Professional multi-window layout
-- **Demo Windows**: Examples for logging, settings, Vulkan info
-- **Theme Support**: Dark, light, and classic themes
-- **Menu System**: Extensible menu bar with common operations
+- **Professional Interface**: Dockable windows with customizable layouts
+- **Example Windows**: Ready-to-use panels for logging, settings, and system information
+- **Theme System**: Built-in dark, light, and classic theme switching
+- **Menu Framework**: Extensible menu bar with file operations and view management
+- **Multi-Window Support**: Native multi-monitor and viewport capabilities
+
+### Networking & Connectivity
+- **ENet Integration**: Reliable UDP networking for multiplayer and real-time applications
+- **Cross-Platform Networking**: Consistent network API across Windows, macOS, and Linux
+- **Event-Driven Architecture**: Non-blocking network event handling
 
 ### Development Tools
-- **Unit Testing**: GoogleTest framework integration
-- **Build Configurations**: Debug/Release configurations
-- **Cross-Platform**: Conditional compilation for different platforms
-- **IDE Support**: Folder organization for Visual Studio/CLion
+- **Unit Testing**: Complete GoogleTest integration with example tests
+- **Professional Logging**: spdlog with configurable levels and formatting
+- **Build System**: Modern CMake with CPM dependency management
+- **IDE Support**: Project organization for Visual Studio, CLion, and other IDEs
+- **Debug Tools**: Vulkan validation layers and comprehensive error handling
+- **Cross-Platform**: Native support for Windows, macOS, and Linux builds
+
 
 ## 🚧 Extending the Template
 
@@ -98,6 +117,7 @@ void ShowMyCustomWindow() {
 
 // Call from CreateMainUI() or ShowExampleWindows()
 ```
+
 
 ### Adding Vulkan Rendering
 The template provides a basic Vulkan setup. To add custom rendering:
@@ -120,6 +140,7 @@ FetchContent_MakeAvailable(my_library)
 # Add to target_link_libraries
 target_link_libraries(${PROJECT_NAME}_lib INTERFACE my_library::my_library)
 ```
+
 
 ## 🧪 Testing
 
@@ -145,6 +166,7 @@ Example:
 cmake .. -DENABLE_TESTING=OFF -DCMAKE_BUILD_TYPE=Release
 ```
 
+
 ## 🔍 Troubleshooting
 
 ### Vulkan Issues
@@ -162,6 +184,7 @@ cmake .. -DENABLE_TESTING=OFF -DCMAKE_BUILD_TYPE=Release
 - Verify config.json permissions
 - Test with Vulkan validation layers enabled
 
+
 ## 🤝 Contributing
 
 1. Fork the repository
@@ -170,9 +193,11 @@ cmake .. -DENABLE_TESTING=OFF -DCMAKE_BUILD_TYPE=Release
 4. Push to branch: `git push origin feature/amazing-feature`
 5. Open a Pull Request
 
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 
 ## 🙏 Acknowledgments
 
@@ -183,6 +208,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **nlohmann/json**: JSON parsing library
 - **GoogleTest**: Unit testing framework
 - **VMA**: Vulkan Memory Allocator
+
 
 ## 🚀 Perfect For
 
