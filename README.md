@@ -12,15 +12,20 @@ https://www.youtube.com/watch?v=WLjuV9_fQfw
 ## 🚀 Features
 
 - **SDL3**: Modern cross-platform windowing and input handling
-- **Vulkan**: High-performance, low-level graphics API
-- **Dear ImGui**: Immediate-mode GUI with docking support
+- **SDL3 Extensions**: Image loading (SDL3_image), TrueType fonts (SDL3_ttf), audio mixing (SDL3_mixer)
+- **Vulkan**: High-performance, low-level graphics API with complete toolchain
+- **Dear ImGui**: Immediate-mode GUI with docking and multi-viewport support
+- **3D Model Support**: Assimp integration for loading FBX, OBJ, COLLADA, glTF and 40+ formats
+- **Networking**: ENet library for reliable UDP networking and multiplayer support
 - **C++20**: Modern C++ standard with best practices
-- **Professional Logging**: Integration with spdlog for structured logging
+- **Professional Logging**: Integration with spdlog for structured, high-performance logging
 - **JSON Support**: Configuration and data handling with nlohmann/json
 - **Cross-Platform**: Windows, macOS, and Linux support
-- **Modern CMake**: Clean, modern build system with dependency management
+- **Modern CMake**: Clean, modern build system with CPM dependency management
 - **Testing Ready**: GoogleTest integration for unit testing
 - **Memory Management**: Vulkan Memory Allocator (VMA) for efficient GPU memory handling
+- **Math Library**: cglm for graphics mathematics operations
+- **Font Rendering**: Both ImGui font system and SDL3_ttf for comprehensive text support
 
 ## 📁 Project Structure
 
