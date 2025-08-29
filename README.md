@@ -27,7 +27,7 @@ https://www.youtube.com/watch?v=WLjuV9_fQfw
 ```
 ├── src/
 │   └── main.cpp              # Main application entry point
-├── include/                  # Public headers (add your own)
+├── vendor/                  # Public headers (add your own)
 ├── test/
 │   ├── main.cpp             # Test runner
 │   └── basic_tests.cpp      # Example unit tests
